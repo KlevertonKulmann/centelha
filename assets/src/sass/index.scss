@@ -1,0 +1,17 @@
+@import "themeDefault";
+@import "layout";
+html{
+  body{
+    background: url('https://res.cloudinary.com/dr1v30x1x/image/upload/v1669498589/website/centelha/bg-site_qs0fbh.png');
+    background-size: 100%;
+    background-repeat: repeat-y;
+    color:$secondary;
+    &.darkTheme{
+      background: url('https://res.cloudinary.com/dr1v30x1x/image/upload/v1669511660/website/centelha/bg-dark_gktnuq.png');
+      color:$tertiary;
+      background-size: 100%;
+      background-repeat: repeat-y;
+    }
+    
+  }
+}
