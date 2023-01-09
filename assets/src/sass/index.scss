@@ -1,6 +1,7 @@
 @import "themeDefault";
 @import "layout";
 html{
+  font-size:62.5%;
   body{
     margin: 0;
     color:$secondary;
@@ -8,12 +9,12 @@ html{
     background-size: 100%;
     background-repeat: repeat-y;
     font-family: 'Inter', sans-serif;
-    background: url('../src/imgs/bg-BRANCO.png');
+    background-image: url('../src/imgs/bg-BRANCO.png');
     &.darkTheme{
       color:$tertiary;
       background-size: 100%;
       background-repeat: repeat-y;
-      background: url('../src/imgs/bg-DARK.png');
+      background-image: url('../src/imgs/bg-DARK.png');
     }
     /*Estilos da barra de rolagem*/
     &::-webkit-scrollbar {
@@ -27,6 +28,39 @@ html{
       background-color: $primary;
     }
     /*Fim dos estilos da barra de rolagem*/
+    #loadScreen{
+      top: 0;
+      left: 0;
+      opacity: 1;
+      z-index: 300;
+      width: 100vw;
+      display: flex;
+      height: 100vh;
+      position: fixed;
+      align-items: center;
+      background-size: 100%;
+      transition: opacity .3s;
+      justify-content: center;
+      background-image: url('../src/imgs/bg-DARK.png');
+      &.loaded{
+        opacity: 0;
+      }
+      .loadbar{
+        width: 157px;
+        height: 247px;
+        display: block;
+        background-position: center 0;
+        animation: load 3s linear forwards;
+        background-image: url('../src/imgs/loadbar.png');
+        mask-repeat: no-repeat;
+        -webkit-mask-repeat: no-repeat;
+        mask-image: url('../src/imgs/mascaraCentelha.svg');
+        -webkit-mask-image: url('../src/imgs/mascaraCentelha.svg');
+      }
+    }
+    &:not(.darkTheme) #loadScreen{
+      background-image: url('../src/imgs/bg-BRANCO.png');
+    }
     .container{
       margin:auto;
       max-width: 1200px;
@@ -62,8 +96,8 @@ html{
       }
     }
     .hide{
-      transform: translateY(100%);
       transition: all .3s;
+      transform: translateY(100%);
       &.show{
        transform: translateY(0);
       }
@@ -76,7 +110,7 @@ html{
       position: fixed;
       padding: 10px 0;
       background-size: cover;
-      background: url('../src/imgs/bg-DARK.png');
+      background-image: url('../src/imgs/bg-DARK.png');
       .d-flex{
         transform: translateX(-3%);
       }
@@ -84,6 +118,7 @@ html{
         color: $tertiary;
         text-decoration: none;
         transition: text-shadow 300ms;
+        font-size: 2.4rem;
         &:hover{
           text-shadow: 0 0 6px $primary;
         }
@@ -102,7 +137,7 @@ html{
         background-repeat: no-repeat;
         min-height: calc(100vh - 91px);     
         background-position: center center;
-        background: url('../src/imgs/bg-1.png');
+        background-image: url('../src/imgs/bg-1.png');
         .container,
         .d-flex{
           min-height: inherit;
@@ -123,24 +158,6 @@ html{
           span{
             z-index: 20;
             position: relative;
-          }
-          &::before,
-          &::after{
-            content:"CENTELHA DIGITAL";
-            top: 0;
-            left: 0;
-            z-index: 10;
-            position: absolute;
-          }
-          &::before{
-            color: $success;
-            transform: translateX(10px);
-            animation: glitchVerde 800ms infinite;
-          }
-          &::after{
-            color: $contrasteSuccess;
-            transform: translateX(-10px);
-            animation: glitchRoxo 800ms infinite;
           }
         }
         h1{
@@ -168,19 +185,19 @@ html{
             position: absolute;
             border-left: 3px solid $tertiary;
             border-bottom: 3px solid $tertiary;
-            transform: rotate(-45deg) skew(17deg, 17deg) translate(-25%, -25%);
             animation: fadeinOut 2s 0.5s infinite linear;
+            transform: rotate(-45deg) skew(17deg, 17deg) translate(-25%, -25%);
             &:first-child{
               border-left: 3px solid $primaryContrast;
               border-bottom: 3px solid $primaryContrast;
-              transform: rotate(-45deg) skew(17deg, 17deg) translate(5%, -55%);
               animation: fadeinOut 2s 0s infinite linear;
+              transform: rotate(-45deg) skew(17deg, 17deg) translate(5%, -55%);
             }
             &:last-child{
               border-left: 3px solid $primaryContrast;
               border-bottom: 3px solid $primaryContrast;
-              transform: rotate(-45deg) skew(17deg, 17deg) translate(-55%, 5%);
               animation: fadeinOut 2s 1s infinite linear;
+              transform: rotate(-45deg) skew(17deg, 17deg) translate(-55%, 5%);
             }
           }
         }
@@ -189,35 +206,76 @@ html{
   }
 }
 
-@keyframes glitchRoxo{
-  0%{transform: translateX(-5px);}
-  10%{transform: translateX(-2px);}
-  20%{transform: translateX(-4px);}
-  30%{transform: translateX(-1px);}
-  40%{transform: translateX(-5px);}
-  50%{transform: translateX(-3px);}
-  60%{transform: translateX(-1px);}
-  70%{transform: translateX(-3px);}
-  80%{transform: translateX(-2px);}
-  90%{transform: translateX(0);}
-  100%{transform: translateX(0);}
+
+.glitch:after{
+  content:attr(data-text);
+  top:0;
+  left:0;
+  color:black;
+  overflow:hidden;
+  position:absolute;
+  clip:rect(0,900px,0,0);
+  background:transparent;
+  transform: translateX(2px);
+  text-shadow:-1px 0 $success;
+  animation:noise-anim 2s infinite linear alternate-reverse;
 }
-@keyframes glitchVerde{
-  0%{transform: translateX(7px);}
-  10%{transform: translateX(3px);}
-  20%{transform: translateX(5px);}
-  30%{transform: translateX(0);}
-  40%{transform: translateX(0);}
-  50%{transform: translateX(0);}
-  60%{transform: translateX(1px);}
-  70%{transform: translateX(3px);}
-  80%{transform: translateX(5px);}
-  90%{transform: translateX(3px);}
-  100%{transform: translateX(1px);}
+.glitch:before{
+  content:attr(data-text);
+  top:0;
+  left:-2px;
+  color:black;
+  overflow:hidden;
+  position:absolute;
+  clip:rect(0,900px,0,0);
+  background:transparent;
+  text-shadow:1px 0 $contrasteSuccess;
+  animation:noise-anim-2 3s infinite linear alternate-reverse;
+}
+
+@keyframes load{
+  0%{
+    opacity: 0;
+    background-position: center 0;
+  }
+  20%{
+    opacity: 1;
+    background-position: center 0;
+  }
+  80%{
+    background-position: center 100%;
+  }
+  95%{
+    opacity: 1;
+    transform: scale(1);
+  }
+  100%{
+    opacity: 0;
+    background-position: center 100%;
+    transform: scale(1.2);
+  }
 }
 @keyframes fadeinOut{
   0%{opacity: 0;}
   50%{opacity: 0;}
   75%{opacity: 1;}
   100%{opacity: 0;}
+}
+
+@keyframes noise-anim{
+  $steps:20;
+  @for $i from 0 through $steps{
+    #{percentage($i*(1/$steps))}{
+      clip:rect(random(100)+px,9999px,random(100)+px,0);
+    }
+  }
+}
+
+@keyframes noise-anim-2{
+  $steps:20;
+  @for $i from 0 through $steps{
+    #{percentage($i*(1/$steps))}{
+      clip:rect(random(100)+px,9999px,random(100)+px,0);
+    }
+  }
 }

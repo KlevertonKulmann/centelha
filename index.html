@@ -5,48 +5,82 @@
         <title>Título</title>
         <link rel="stylesheet" href="assets/css/app.min.css">
     </head>
-    <body >
+    <body>
+        <div id="loadScreen">
+            <span class="loadbar"></span>
+        </div>
         <a href="" class="flutuante-br flutuante flutuante-bg1">
             <img src="assets/src/imgs/WHATSSAP-ICON.svg" alt="Whatsapp">
         </a>
-        <span onclick="clickToTop()" class="flutuante-bl flutuante flutuante-bg1 hide" id="btt">
+        <a class="flutuante-bl flutuante flutuante-bg1 hide anchor" href="#topo" id="btt">
             <img src="assets/src/imgs/ARROW-UP.svg" alt="Arrow-Up">
-        </span>
+        </a>
         <header>
             <div class="container">
                 <div class="d-flex">
-                    <a href="">CRIAÇÃO</a>
-                    <a href="">ESPECIALIDADES</a>
-                    <a href="">PORTIFÓLIO</a>
-                    <a href="">
+                    <a class="anchor" href="#criacao">CRIAÇÃO</a>
+                    <a class="anchor" href="#especialidades">ESPECIALIDADES</a>
+                    <a class="anchor" href="#portifolio">PORTIFÓLIO</a>
+                    <a class="anchor" href="#topo">
                         <img src="assets/src/imgs/LOGO.svg" alt="Logo Centelha">
                     </a>
-                    <a href="">AVALIAÇÕES</a>
-                    <a href="">DÚVIDAS</a>
-                    <a href="">CONTATO</a>
+                    <a class="anchor" href="#avaliacoes">AVALIAÇÕES</a>
+                    <a class="anchor" href="#duvida">DÚVIDAS</a>
+                    <a class="anchor" href="#contato">CONTATO</a>
                 </div>
             </div>
         </header>
-        <span id="trocaTema" class="switch">
+        <!--span id="trocaTema" class="switch">
             <input type="checkbox" id="switch-round" />
             <label for="switch-round"></label>
-        </span>
+        </span-->
         <section id="topo">
             <div class="container">
                 <div class="d-flex">
-                    <h2><span>CENTELHA DIGITAL</span></h2>
+                    <h2>
+                        <span class="glitch" data-text="CENTELHA DIGITAL">CENTELHA DIGITAL</span>
+                    </h2>
                     <h1>CRIAÇÃO DE SITES<span>PROFISSIONAIS</span></h1>
                     <span id="scroll">
-                        <i></i>
-                        <i></i>
-                        <i></i>
+                        <a href="#criacao" class="anchor">
+                            <i></i>
+                            <i></i>
+                            <i></i>
+                        </a>
                     </span>
                 </div>
             </div>
         </section>
         <section id="criacao">
             <div class="container">
-
+                <div class="content box-criacao">
+                    <div class="titulo">
+                        <h3>CRIAÇÃO DE SITES</h3>
+                        <h2>COMO FUNCIONA?</h2>
+                    </div>
+                    <div class="grid-4">
+                        <div>
+                            <img src="assets/src/imgs/CONTATO.svg" alt="">
+                            <h4>CONTATO</h4>
+                            <p>CONHECEMOS SEU<br>PROJETO E CAPTAMOS<br>SEU DESEJO</p>
+                        </div>
+                        <div>
+                            <img src="assets/src/imgs/PLANEJAMENTO.svg" alt="">
+                            <h4>PLANEJAMENTO</h4>
+                            <p>CRIAÇÃO DE<br>ESBOÇO E LAYOUT<br>PARA APROVAÇÃO</p>
+                        </div>
+                        <div>
+                            <img src="assets/src/imgs/DESENVOLVIMENTO.svg" alt="">
+                            <h4>DESENVOLVIMENTO</h4>
+                            <p>NOSSA EQUIPE DE<br>DESENVOLVEDORES<br>ENTRA EM AÇÃO</p>
+                        </div>
+                        <div>
+                            <img src="assets/src/imgs/LANCAMENTO.svg" alt="">
+                            <h4>LANÇAMENTO</h4>
+                            <p>PUBLICAÇÃO DO<br>SEU SITE PARA<br>O MUNDO</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
         <section id="especialidades">
