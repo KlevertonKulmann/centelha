@@ -1,32 +1,77 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;600&display=swap');
 .switch{
-    input{
-      display: none;
-      &:checked ~ label{
-        border-color:$primary;
-        &::after{
-          translate: 30px 0;
-          background: $primary;
-        }
-      }
-    }
-    label{
-      display: block;
-      width: 50px;
-      height: 20px;
-      padding: 3px;
-      border-radius: 25px;
-      border: 2px solid $secondary;
-      cursor: pointer;
-      transition: .3s;
+  input{
+    display: none;
+    &:checked ~ label{
+      border-color:$primary;
       &::after{
-        content: "";
-        display: inherit;
-        width: 20px;
-        height: 20px;
-        border-radius: 12px;
-        background: $secondary;
-        transition: .3s;
+        translate: 30px 0;
+        background: $primary;
       }
     }
   }
+  label{
+    width: 50px;
+    height: 20px;
+    padding: 3px;
+    display: block;
+    transition: .3s;
+    cursor: pointer;
+    border-radius: 25px;
+    border: 2px solid $secondary;
+    &::after{
+      content: "";
+      width: 20px;
+      height: 20px;
+      transition: .3s;
+      display: inherit;
+      border-radius: 12px;
+      background: $secondary;
+    }
+  }
+}
+#criacao{
+  padding: 180px 0;
+  min-height: unset;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-image: url("../src/imgs/MARGEM-CRIACAO-SITES.svg");
+}
+section{
+  .titulo{
+    h2{
+      margin-top: 0;
+      font-size: 5rem;
+      font-weight: 600;
+    }
+    h3{
+      font-size: 3rem;
+      margin-bottom: 0;
+    }
+  }
+  .content{
+    h4{
+      margin: 1rem 0;
+      font-size: 2rem;
+      font-weight: 600;
+    }
+    p{
+      margin: 1rem 0;
+      font-weight: 200;
+      font-size: 1.7rem;
+    }
+  }
+}
+.box-criacao{
+  .titulo{
+    text-align: center;
+    margin-bottom: 70px;
+
+  }
+}
+.grid-4{
+  display: grid;
+  grid-gap: 100px;
+  text-align: center;
+  grid-auto-flow: column;
+}

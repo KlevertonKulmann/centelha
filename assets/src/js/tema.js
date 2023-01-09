@@ -1,7 +1,20 @@
 function toggleTema(){
-    let tema = document.querySelector('body');
-    let botaoTema = document.querySelector('#trocaTema label');
-    botaoTema.addEventListener('click', function() {
-        tema.classList.toggle('darkTheme');
-    });    
+    var tema = document.querySelector('body');
+    var elementExists = document.getElementById("trocaTema")
+    if(document.body.contains(elementExists)){
+        var botaoTema = document.querySelector('#trocaTema label');
+        botaoTema.addEventListener('click', function() {
+            tema.classList.toggle('darkTheme');
+        });
+    }
+}
+
+function loadScreen(){
+    setTimeout(function(){
+        var loadScreen = document.getElementById('loadScreen');
+        loadScreen.classList.add('loaded');
+        setTimeout(function(){
+            loadScreen.remove();
+        },300)
+    },3400)
 }
