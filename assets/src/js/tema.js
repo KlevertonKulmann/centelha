@@ -18,3 +18,20 @@ function loadScreen(){
         },300)
     },3400)
 }
+
+function cursor(event) {
+    var cursor = document.querySelector('#customCursor');
+    const allAnchorsTags = document.querySelectorAll('a');
+    allAnchorsTags.forEach((item)=>{
+        item.addEventListener('mouseover',function(){
+           document.getElementById('customCursor').classList.add('hoveringLink')
+        });
+        item.addEventListener('mouseleave',function(){
+            document.getElementById('customCursor').classList.remove('hoveringLink')
+        })
+    })
+    document.addEventListener('mousemove',function checkHover(event){
+        var posY =  event.clientY;
+        cursor.setAttribute('style','top:'+posY+'px; left:'+event.x+'px;')
+    });
+}

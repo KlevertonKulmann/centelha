@@ -1,4 +1,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;600&display=swap');
+body{
+  *,
+  *:hover{
+    cursor:none;
+  }
+  @media screen and (min-width: 1199px) {
+    #customCursor{
+      z-index: 300;
+      width: 20px;
+      height: 20px;
+      position: fixed;
+      border-radius: 50%;
+      pointer-events: none;
+      background-size: contain;
+      background-color: #1A1D21;
+      background-position: center;
+      transform: translate(-50%,-50%);
+      transition: background-image .3s, transform .3s;
+      background-image: url(../src/imgs/CURSOR-DEFAULT.svg);
+      &.hoveringLink{
+        background-image: url(../src/imgs/CURSOR-LINK.svg);
+
+        transform:scale(1.2)translate(-50%,-50%);
+      }
+    }
+  }
+}
 .switch{
   input{
     display: none;
@@ -71,7 +98,11 @@ section{
 }
 .grid-4{
   display: grid;
-  grid-gap: 100px;
   text-align: center;
-  grid-auto-flow: column;
+  grid-template-columns: repeat(auto-fit,minmax(230px,1fr));
+  grid-auto-rows:25rem;
+  @media screen and (max-width:950px) {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  }
 }
+

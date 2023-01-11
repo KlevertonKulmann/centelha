@@ -28,11 +28,14 @@ html{
       background-color: $primary;
     }
     /*Fim dos estilos da barra de rolagem*/
+    .mob-show{
+      display: none;
+    }
     #loadScreen{
       top: 0;
       left: 0;
       opacity: 1;
-      z-index: 300;
+      z-index: 800;
       width: 100vw;
       display: flex;
       height: 100vh;
@@ -73,20 +76,19 @@ html{
     .flutuante{
       z-index: 200;
       position: fixed;
-      transition: padding .3s;
+      transition: padding-bottom .3s;
       box-shadow: $primaryContrast 0 2px 10px;
       &:hover{
-        padding: 15px 15px 20px;
+        padding-bottom: 15px;
       }
       &-br{
         bottom: 0;
         right: 8px;
       }
       &-bg1{
-        display: block;
         background: $primary;
-        padding: 15px 15px 10px;
         img{
+          margin: 15px 15px 10px;
           filter: brightness(300%) grayscale(1);
         }
       }
@@ -130,6 +132,7 @@ html{
       }
     }
     section{
+      overflow: hidden;
       min-height: 100vh;
       &#topo{
         margin-top: 91px;
@@ -260,6 +263,96 @@ html{
   50%{opacity: 0;}
   75%{opacity: 1;}
   100%{opacity: 0;}
+}
+
+
+@media screen and (max-width:1200px) {
+  html{
+    body{
+      header{
+        a{
+          font-size: 2rem;
+        }
+        .d-flex{
+          transform: translateX(0);
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width:768px) {
+  html{
+    body{
+      .mob-hide{display: none}
+      .mob-show{display: block;}
+      .mob-order-1{order: 1;}
+      .mob-order-2{order: 2;}
+      .mob-order-3{order: 3;}
+      .mob-order-4{order: 4;}
+      .mob-order-5{order: 5;}
+      .mob-order-6{order: 6;}
+      .mob-order-7{order: 7;}
+      .toggle-button{
+        width: 50px;
+        height: 50px;
+        display: flex;
+        flex-wrap: wrap;
+        position: fixed;
+        right: 12px;
+        top: 12px;
+        transition: right .3s;
+        z-index: 400;
+        span {
+          transition: transform .3s, background-color .3s;
+          height: 6px;
+          width: 100%;
+          margin: 6px 0;
+          display: block;
+          border-radius: 10px;
+          background-color: $secondary;
+        }
+      }
+      .toggle-button.mob-menu-aberto{
+        span{
+          top: 12px;
+          position:absolute;
+          background-color: $secondaryContrast;
+          &:first-child{transform: rotate(45deg);}
+          &:nth-child(2){transform: rotate(-45deg);}
+          &:nth-child(3){opacity: 0;}
+        }
+      }
+      header{
+        background-size: contain;
+        transition: transform .3s;
+        transform: translateX(100%);
+        opacity: 0;
+        &.mob-menu-aberto{
+          transform: translateX(0);
+          opacity: 1;
+        }
+        .mob-menu{
+          height: 100vh;
+          flex-wrap: wrap;
+          text-align: center;
+          a{
+            width: 100%;
+            padding: 3rem 0;
+          }
+        }
+        a{
+        }
+        .d-flex{
+        }
+      }
+      section{
+        &#topo{
+          margin-top: 0;
+        }
+      }
+    }
+  }
 }
 
 @keyframes noise-anim{

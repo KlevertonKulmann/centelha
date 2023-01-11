@@ -10,27 +10,42 @@ function backToTop(){
     }
 }
 
-function anchor () {
-    var ancoras = document.getElementsByClassName('anchor');
-    var menuHeight = document.querySelector('header').offsetHeight
-    var funcAncora = function(e) {
-        e.preventDefault();
-        var destino = this.getAttribute("href").substring(1);
-        destino = document.getElementById(destino);
-        window.scrollTo({
-            top: destino.offsetTop -menuHeight,
-            behavior: "smooth"
+function anchor() {
+    $(window).on('load',function () {
+        var page = $('html, body');
+        var urlHash = window.location.hash.replace('#', '');
+        $('.anchor').click(function (e) {
+            verificaMenuMobile(e)
+            page.animate({
+                scrollTop: $($.attr(this, 'href')).offset().top
+            }, 500);
+            return false;
         });
-    }
-    Array.from(ancoras).forEach(function (element){
-        element.addEventListener('click', funcAncora);
+        if (urlHash.length > 0) {
+            page.animate({
+                scrollTop: $('#' + urlHash).offset().top
+            }, 500);
+        }
     });
+}
+function verificaMenuMobile(linkMenu){
+    if(linkMenu.target.closest('header') !== null && linkMenu.target.closest('header').classList.contains('mob-menu-aberto')){
+        mobileMenuToggle();
+    }
+}
+function mobileMenuToggle(){
+    const menuBox = document.getElementById('menu-box');
+    const menuBtn = document.getElementById('menuBtn');
+    menuBox.classList.toggle('mob-menu-aberto')
+    menuBtn.classList.toggle('mob-menu-aberto')
 }
 function init(){
     //toggleTema();
     loadScreen();
     backToTop();
     anchor();
+    cursor(event);
+
 }
 document.addEventListener( 'DOMContentLoaded', function(){
     init();
@@ -59,4 +74,21 @@ function loadScreen(){
             loadScreen.remove();
         },300)
     },3400)
+}
+
+function cursor(event) {
+    var cursor = document.querySelector('#customCursor');
+    const allAnchorsTags = document.querySelectorAll('a');
+    allAnchorsTags.forEach((item)=>{
+        item.addEventListener('mouseover',function(){
+           document.getElementById('customCursor').classList.add('hoveringLink')
+        });
+        item.addEventListener('mouseleave',function(){
+            document.getElementById('customCursor').classList.remove('hoveringLink')
+        })
+    })
+    document.addEventListener('mousemove',function checkHover(event){
+        var posY =  event.clientY;
+        cursor.setAttribute('style','top:'+posY+'px; left:'+event.x+'px;')
+    });
 }

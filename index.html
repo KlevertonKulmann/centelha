@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <title>Título</title>
         <link rel="stylesheet" href="assets/css/app.min.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
         <div id="loadScreen">
@@ -15,18 +16,24 @@
         <a class="flutuante-bl flutuante flutuante-bg1 hide anchor" href="#topo" id="btt">
             <img src="assets/src/imgs/ARROW-UP.svg" alt="Arrow-Up">
         </a>
-        <header>
+        <div onclick="mobileMenuToggle()" class="mob-show toggle-button" id="menuBtn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <header id="menu-box">
             <div class="container">
-                <div class="d-flex">
-                    <a class="anchor" href="#criacao">CRIAÇÃO</a>
-                    <a class="anchor" href="#especialidades">ESPECIALIDADES</a>
-                    <a class="anchor" href="#portifolio">PORTIFÓLIO</a>
-                    <a class="anchor" href="#topo">
-                        <img src="assets/src/imgs/LOGO.svg" alt="Logo Centelha">
+                <div class="d-flex mob-menu">
+                    <a class="anchor mob-order-2" href="#criacao">CRIAÇÃO</a>
+                    <a class="anchor mob-order-3" href="#especialidades">ESPECIALIDADES</a>
+                    <a class="anchor mob-order-4" href="#portifolio">PORTIFÓLIO</a>
+                    <a class="anchor mob-order-1" href="#topo">
+                        <img class="mob-hide" src="assets/src/imgs/LOGO.svg" alt="Logo Centelha">
+                        <span class="mob-show">TOPO</span>
                     </a>
-                    <a class="anchor" href="#avaliacoes">AVALIAÇÕES</a>
-                    <a class="anchor" href="#duvida">DÚVIDAS</a>
-                    <a class="anchor" href="#contato">CONTATO</a>
+                    <a class="anchor mob-order-5" href="#avaliacoes">AVALIAÇÕES</a>
+                    <a class="anchor mob-order-6" href="#duvida">DÚVIDAS</a>
+                    <a class="anchor mob-order-7" href="#contato">CONTATO</a>
                 </div>
             </div>
         </header>
@@ -98,9 +105,10 @@
         <section id="contato">
             <div class="container"></div>
         </section>
-       
+
+        <span id="customCursor"></span>
         <footer></footer>
-        
+        <script src="assets/js/jquery-3.6.3.min.js"></script>
         <script src="assets/js/app.min.js"></script>
     </body>
 </html>
