@@ -1,6 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;600&display=swap');
+@import "tipografia";
+html{
+  font-size:$aspect;
+}
 body{
-
+  /*Estilos da barra de rolagem*/
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+  &::-webkit-scrollbar-track {
+    background: $primaryContrast;
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: 20px;
+    background-color: $primary;
+  }
+  .hide{
+    transition: all .3s;
+    transform: translateY(100%);
+    &.show{
+     transform: translateY(0);
+    }
+  }
+  /*Fim dos estilos da barra de rolagem*/
   .glitch:after{
     content:attr(data-text);
     top:0;
@@ -25,6 +47,105 @@ body{
     background:transparent;
     text-shadow:1px 0 $contrasteSuccess;
     animation:noise-anim-2 3s infinite linear alternate-reverse;
+  }
+
+  .mob-show{
+    display: none;
+  }
+  #loadScreen{
+    top: 0;
+    left: 0;
+    opacity: 1;
+    z-index: 800;
+    width: 100vw;
+    display: flex;
+    height: 100vh;
+    position: fixed;
+    align-items: center;
+    background-size: 100%;
+    transition: opacity .3s;
+    justify-content: center;
+    background-image: url('../src/imgs/bg-DARK.png');
+    &.loaded{
+      opacity: 0;
+    }
+    .loadbar{
+      width: 157px;
+      height: 247px;
+      display: block;
+      background-position: center 0;
+      animation: load 3s linear forwards;
+      background-image: url('../src/imgs/loadbar.png');
+      mask-repeat: no-repeat;
+      -webkit-mask-repeat: no-repeat;
+      mask-image: url('../src/imgs/mascaraCentelha.svg');
+      -webkit-mask-image: url('../src/imgs/mascaraCentelha.svg');
+    }
+  }
+
+  .d-flex{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+  .flutuante{
+    z-index: 200;
+    position: fixed;
+    transition: padding-bottom .3s;
+    box-shadow: $primaryContrast 0 2px 10px;
+    &:hover{
+      padding-bottom: 15px;
+    }
+    &-bg1{
+      background: $primary;
+      img{
+        margin: 15px 15px 10px;
+        filter: contrast(0) brightness(0)invert(1);
+      }
+    }
+    &-br{
+      bottom: 0;
+      right: 8px;
+    }
+    &-bl{
+      bottom: 0;
+      left: 8px;
+    }
+    &-tl{
+      top:0;
+      left: 8px;
+    }
+    &-tr{
+      top: 0;
+      right: 8px;
+    }
+  }
+  header{
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 200;
+    position: fixed;
+    padding: 10px 0;
+    background-size: cover;
+    background-image: url('../src/imgs/bg-DARK.png');
+    .d-flex{
+      transform: translateX(-3%);
+    }
+    a{
+      color: $tertiary;
+      text-decoration: none;
+      transition: text-shadow 300ms;
+      font-size: $opcaoMenu;
+      &:hover{
+        text-shadow: 0 0 6px $primary;
+      }
+    }
+    div{
+      img{
+        width: 30px;
+      }
+    }
   }
 }
 .switch{
@@ -91,169 +212,53 @@ body{
     }
   }
 }
-
-#criacao,
-#especialidades,
-#portifolio,
-#avaliacoes,
-#duvida,
-#contato{
-  padding: 180px 0;
-  min-height: unset;
-}
-#criacao{
-  &.bg-custom{
-    .container{
-      position: relative;
-      &::after,
-      &::before{
-        content: '';
-        top: 50%;
-        width: 300px;
-        overflow: hidden;
-        position: absolute;
-        min-height: 300px;
-        background-size: cover;
-        transform: translateY(-50%);
-        background-image: url("../src/imgs/MARGEM-CRIACAO-SITES.svg");
-      }
-      &::after{
-        right: 0;
-        transform: translateY(-50%)rotateY(180deg);
-      }
-      .content{
-        position: relative;
-        z-index: 10;
-        .slider-default{
-          padding: 0 3px;
-        }
-      }
-    }
-  }
-}
-#especialidades,
-#avaliacoes,
-#contato{
-  background-position: center center;
-  background-size: contain;
-  background-repeat: repeat-y;
-  padding: 5px 0;
-  position: relative;
-  overflow: unset;
-  min-height: unset;
-  &::before,
-  &::after{
-    content: '';
-    width: 100%;
-    background-size: 100%;
-    position: absolute;
-    background-repeat: no-repeat;
-  }
-  &::before{
-    background-position: center bottom;
-    left: 0;
-    top: 0;
-    transform: translateY(calc(-100% + 5px));
-  }
-  &::after{
-    background-position: center top;
-    left: 0;
-    bottom: 0;
-    transform: translateY(calc(100% - 1px));
-  }
-}
-#especialidades{
-  background-image: url('../src/imgs/bg-DARK.png');
-  color:$secondaryContrast;
-  &::before,
-  &::after{
-    height: 120px;
-  }
-  &::before{
-    background-image: url('../src/imgs/section-border-top.png');
-  }
-  &::after{
-    background-image: url('../src/imgs/section-border-bottom.png');
-  }
-  .grid-3{
-    gap: 50px;
-    flex-wrap: wrap;
-    .item {
-      width: calc(33% - 100px);
-      .img-box{
-        height: 141px;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items:flex-end;
-        margin-bottom: 20px;
-      }
-    }
-  }
-}
-#avaliacoes{
-  background-image: url('../src/imgs/bg-CINZA.png');
-  &::before,
-  &::after{
-    height: 225px;
-  }
-  &::before{
-    background-image: url('../src/imgs/section-2-border-top.png');
-  }
-  &::after{
-    background-image: url('../src/imgs/section-2-border-bottom.png');
-  }
-}
-#duvida{
-
-}
-#contato{
-  background-image: url('../src/imgs/bg-VERDE.png');
-  color:$secondaryContrast;
-  &::before{
-    height: 175px;
-  }
-  &::before{
-    background-image: url('../src/imgs/section-3-border-top.png');
-  }
-  .titulo{
-    text-align: left;
-  }
-}
 section{
-  .titulo{
-    text-align: center;
-    h2{
-      margin-top: 0;
-      font-size: 5rem;
-      font-weight: 600;
-    }
-    h3{
-      font-size: 3rem;
-      margin-bottom: 0;
-    }
-  }
+  overflow: hidden;
+  min-height: 100vh;
   .content{
     &.grid-3{
       text-align: center;
-    }
-    h4{
-      margin: 1rem 0;
-      font-size: 2rem;
-      font-weight: 600;
-    }
-    p{
-      margin: 1rem 0;
-      font-weight: 200;
-      font-size: 1.7rem;
     }
   }
 }
 .box-criacao{
   .titulo{
-    margin-bottom: 70px;
+    margin-bottom: $principal;
   }
 }
+#scroll{
+  width: 100px;
+  display: block;
+  cursor: pointer;
+  text-align: center;
+  position: relative;
+  i{
+    bottom: 0;
+    left: 50%;
+    opacity: 0;
+    width: 48px;
+    height: 48px;
+    display: block;
+    position: absolute;
+    border-left: 3px solid $tertiary;
+    border-bottom: 3px solid $tertiary;
+    animation: fadeinOut 2s 0.5s infinite linear;
+    transform: rotate(-45deg) skew(17deg, 17deg) translate(-25%, -25%);
+    &:first-child{
+      border-left: 3px solid $primaryContrast;
+      border-bottom: 3px solid $primaryContrast;
+      animation: fadeinOut 2s 0s infinite linear;
+      transform: rotate(-45deg) skew(17deg, 17deg) translate(5%, -55%);
+    }
+    &:last-child{
+      border-left: 3px solid $primaryContrast;
+      border-bottom: 3px solid $primaryContrast;
+      animation: fadeinOut 2s 1s infinite linear;
+      transform: rotate(-45deg) skew(17deg, 17deg) translate(-55%, 5%);
+    }
+  }
+}
+
 @media screen and (max-width:1199px){
   #criacao{
     padding: 120px 0;
@@ -280,85 +285,120 @@ section{
   html{
     body{
       section{
-        &#topo{
-          padding-bottom: 20px;
-          .container{
-            #scroll{
-              height: 200px;
-              a{
-                display: block;
-                height: inherit;
-              }
-              i,
-              i:first-child,
-              i:last-child{
-                transform: unset;
-                animation: unset;  
-                border-left: 0;
-                border-bottom: 0;
-                opacity: 1;
-              }
-              i{
-                &:nth-child(2){
-                  width: 3px;
-                  height: calc(200px - 48px);
-                  top: 50%;
-                  left: 50%;
-                  transform: translate(-50%, -50%);
-                  background-color: $primaryContrast;
-                }
-                &:first-child,
-                &:last-child{
-                  border-radius: 50%;
-                  top:0;
-                  transform: translate(-50%, 0);
-                  border:3px solid $primaryContrast;
-                }
-                &:first-child{
-                  animation: slideDown 3s infinite ease-in-out;
-                }
-                &:last-child{
-                  opacity: 0;
-                  background-color: $primaryContrast;
-                  transform: translate(-50%, 0)scale(1.2);
-                  animation: fadeIn-slideDown 3s infinite ease-in-out;
-                }
-              }
+        #scroll{
+          height: 200px;
+          a{
+            display: block;
+            height: inherit;
+          }
+          i,
+          i:first-child,
+          i:last-child{
+            transform: unset;
+            animation: unset;  
+            border-left: 0;
+            border-bottom: 0;
+            opacity: 1;
+          }
+          i{
+            &:nth-child(2){
+              width: 3px;
+              height: calc(200px - 48px);
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              background-color: $primaryContrast;
+            }
+            &:first-child,
+            &:last-child{
+              border-radius: 50%;
+              top:0;
+              transform: translate(-50%, 0);
+              border:3px solid $primaryContrast;
+            }
+            &:first-child{
+              animation: slideDown 3s infinite ease-in-out;
+            }
+            &:last-child{
+              opacity: 0;
+              background-color: $primaryContrast;
+              transform: translate(-50%, 0)scale(1.2);
+              animation: fadeIn-slideDown 3s infinite ease-in-out;
             }
           }
         }
       }
     }
   }
-  #criacao{
-    &.bg-custom{
-     .container{
-      width: 90%;
-      margin: auto;
-      &::after,
-      &::before{
-        min-height: 350px;
-        background-image: url("../src/imgs/MARGEM-CRIACAO-SITES-MOB.svg");
-      }
-     }
-    }
-  }
-  #especialidades{
-    .grid-3{
-      .item {
-        width: calc(50% - 60px);
-      }
-    }
-  }
+  
 }
 @media screen and (max-width:767px){
-  #especialidades{
-    .grid-3{
-      .item {
-        width: 80%;
+  html{
+    body{
+      .mob-hide{display: none}
+      .mob-show{display: block;}
+      .mob-order-1{order: 1;}
+      .mob-order-2{order: 2;}
+      .mob-order-3{order: 3;}
+      .mob-order-4{order: 4;}
+      .mob-order-5{order: 5;}
+      .mob-order-6{order: 6;}
+      .mob-order-7{order: 7;}
+      .toggle-button{
+        width: 50px;
+        height: 50px;
+        display: flex;
+        flex-wrap: wrap;
+        position: fixed;
+        transition: right .3s;
+        z-index: 400;
+        padding: 12px;
+        span {
+          transition: transform .3s, background-color .3s;
+          height: 6px;
+          width: 100%;
+          margin: 6px 0;
+          display: block;
+          border-radius: 10px;
+          background-color: $secondary;
+        }
+      }
+      .toggle-button.mob-menu-aberto{
+        background-color: transparent!important;
+        box-shadow: 0 0 0 transparent!important;
+        margin-top: 17px;
+        margin-right: 7px;
+        span{
+          top: 12px;
+          position:absolute;
+          background-color: $secondaryContrast;
+          &:first-child{transform: rotate(45deg);}
+          &:nth-child(2){transform: rotate(-45deg);}
+          &:nth-child(3){opacity: 0;}
+        }
+      }
+      header{
+        background-size: contain;
+        transition: all .3s;
+        transform: translateX(100%);
+        opacity: 0;
+        &.mob-menu-aberto{
+          transform: translateX(0);
+          opacity: 1;
+        }
+        .mob-menu{
+          height: 100vh;
+          flex-wrap: wrap;
+          text-align: center;
+          a{
+            width: 100%;
+            padding: 3rem 0;
+          }
+        }
       }
     }
   }
+  
 }
 @media screen and (max-width:380px){
   #criacao{
@@ -372,6 +412,8 @@ section{
     }
   }
 }
+
+/*ANIMAÇÕES*/
 @keyframes fadeIn-slideDown{
   0%{
     opacity: 0;
@@ -419,10 +461,47 @@ section{
     top:0;
   }
 }
-
 @keyframes fadeinOut{
   0%{opacity: 0;}
   50%{opacity: 0;}
   75%{opacity: 1;}
   100%{opacity: 0;}
+}
+@keyframes load{
+  0%{
+    opacity: 0;
+    background-position: center 0;
+  }
+  20%{
+    opacity: 1;
+    background-position: center 0;
+  }
+  80%{
+    background-position: center 100%;
+  }
+  95%{
+    opacity: 1;
+    transform: scale(1);
+  }
+  100%{
+    opacity: 0;
+    background-position: center 100%;
+    transform: scale(1.2);
+  }
+}
+@keyframes noise-anim{
+  $steps:20;
+  @for $i from 0 through $steps{
+    #{percentage($i*(1/$steps))}{
+      clip:rect(random(100)+px,9999px,random(100)+px,0);
+    }
+  }
+}
+@keyframes noise-anim-2{
+  $steps:20;
+  @for $i from 0 through $steps{
+    #{percentage($i*(1/$steps))}{
+      clip:rect(random(100)+px,9999px,random(100)+px,0);
+    }
+  }
 }

@@ -1,14 +1,86 @@
+@import "themeDefault";
+$principal:7rem;
+$principalSubtitulo:5rem;
+$titulo:5.5rem;
+$subtitulo:3rem;
+$opcaoMenu:2.4rem;
+$tituloItem:2rem;
+$texto:1.7rem;
+
+$grosso:600;
+$medio:400;
+$fino:300;
+$extraFino:200;
+
+$aspect:62.5%;
 html{
     body{
         .container{
             margin:auto;
             max-width: 1200px;
         }
+        section{
+            &#topo {
+                h1{
+                    font-size: $principalSubtitulo;
+                }
+                h2 {
+                    font-size: $principal;
+                }
+            }
+            .titulo{
+                text-align: center;
+                h2{
+                    margin-top: 0;
+                    font-size: $titulo;
+                    font-weight: $grosso;
+                }
+                h3{
+                    font-size: $subtitulo;
+                    margin-bottom: 0;
+                }
+            }
+            h4{
+                margin: 1rem 0;
+                font-size: $tituloItem;
+                font-weight: $grosso;
+            }
+            p{
+                margin: 1rem 0;
+                font-weight: $extraFino;
+                font-size: $texto;
+            }
+            .nome{
+                font-size: $subtitulo;
+            }
+            .descricao,
+            .detalhes{
+                margin: 0;
+                font-size: $opcaoMenu;
+                font-weight: $fino;
+            }
+            
+        }
     }
 }
+@media screen and (max-width:1200px) {
+    html{
+        body{
+            header{
+                a{
+                    font-size: 2rem;
+                }
+                .d-flex{
+                    transform: translateX(0);
+                }
+            }
+        }
+    }
+}
+
 @media screen and (max-width:767px){
-    html {
-        body {
+    html{
+        body{
             section{
                 &#topo {
                     h1{
@@ -19,12 +91,26 @@ html{
                     }
                 }
                 .titulo{
+                    text-align: center;
                     h2{
+                        margin-top: 0;
                         font-size: 3rem;
+                        font-weight: $grosso;
                     }
                     h3{
                         font-size: 2rem;
+                        margin-bottom: 0;
                     }
+                }
+                h4{
+                    margin: 1rem 0;
+                    font-size: $tituloItem;
+                    font-weight: $grosso;
+                }
+                p{
+                    margin: 1rem 0;
+                    font-weight: $extraFino;
+                    font-size: $texto;
                 }
             }
         }
