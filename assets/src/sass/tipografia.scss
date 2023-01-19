@@ -1,0 +1,32 @@
+html{
+    body{
+        .container{
+            margin:auto;
+            max-width: 1200px;
+        }
+    }
+}
+@media screen and (max-width:767px){
+    html {
+        body {
+            section{
+                &#topo {
+                    h1{
+                        font-size: 4rem;
+                    }
+                    h2 {
+                        font-size: 5rem;
+                    }
+                }
+                .titulo{
+                    h2{
+                        font-size: 3rem;
+                    }
+                    h3{
+                        font-size: 2rem;
+                    }
+                }
+            }
+        }
+    }
+}

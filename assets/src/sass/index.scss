@@ -64,10 +64,6 @@ html{
     &:not(.darkTheme) #loadScreen{
       background-image: url('../src/imgs/bg-BRANCO.png');
     }
-    .container{
-      margin:auto;
-      max-width: 1200px;
-    }
     .d-flex{
       display: flex;
       align-items: center;
@@ -89,7 +85,7 @@ html{
         background: $primary;
         img{
           margin: 15px 15px 10px;
-          filter: brightness(300%) grayscale(1);
+          filter: contrast(0) brightness(0)invert(1);
         }
       }
       &-bl{
@@ -210,32 +206,6 @@ html{
 }
 
 
-.glitch:after{
-  content:attr(data-text);
-  top:0;
-  left:0;
-  color:black;
-  overflow:hidden;
-  position:absolute;
-  clip:rect(0,900px,0,0);
-  background:transparent;
-  transform: translateX(2px);
-  text-shadow:-1px 0 $success;
-  animation:noise-anim 2s infinite linear alternate-reverse;
-}
-.glitch:before{
-  content:attr(data-text);
-  top:0;
-  left:-2px;
-  color:black;
-  overflow:hidden;
-  position:absolute;
-  clip:rect(0,900px,0,0);
-  background:transparent;
-  text-shadow:1px 0 $contrasteSuccess;
-  animation:noise-anim-2 3s infinite linear alternate-reverse;
-}
-
 @keyframes load{
   0%{
     opacity: 0;
@@ -257,12 +227,6 @@ html{
     background-position: center 100%;
     transform: scale(1.2);
   }
-}
-@keyframes fadeinOut{
-  0%{opacity: 0;}
-  50%{opacity: 0;}
-  75%{opacity: 1;}
-  100%{opacity: 0;}
 }
 
 

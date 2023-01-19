@@ -43,7 +43,8 @@ function init(){
     loadScreen();
     backToTop();
     anchor();
-    cursor(event);
+    //cursor(event);
+    mobSlider();
 
 }
 document.addEventListener( 'DOMContentLoaded', function(){

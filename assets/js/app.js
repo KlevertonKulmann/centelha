@@ -44,7 +44,8 @@ function init(){
     loadScreen();
     backToTop();
     anchor();
-    cursor(event);
+    //cursor(event);
+    mobSlider();
 
 }
 document.addEventListener( 'DOMContentLoaded', function(){
@@ -54,7 +55,34 @@ document.addEventListener('scroll', function(){
     backToTop();
 });
 console.log('parallax');
-console.log('slider');
+function mobSlider(){
+    $('.slider-grid-four').slick({
+        slidesToScroll:1,
+        slidesToShow:4,
+        arrows:false,
+        dots:false,
+        responsive: [
+            {
+              breakpoint: 1024,
+              settings: {
+                slidesToShow: 2,
+                infinite: false,
+                dots: true,
+                autoplay:true,
+                autoplaySpeed:7000
+              }
+            },
+            {
+                breakpoint: 767,
+                settings: {
+                  slidesToShow: 1,
+                  dots: true
+                }
+            },
+        ]
+    });
+}
+var $cursor ;
 function toggleTema(){
     var tema = document.querySelector('body');
     var elementExists = document.getElementById("trocaTema")
@@ -75,20 +103,28 @@ function loadScreen(){
         },300)
     },3400)
 }
-
+/*
 function cursor(event) {
-    var cursor = document.querySelector('#customCursor');
+    $cursor = document.getElementById('customCursor');
     const allAnchorsTags = document.querySelectorAll('a');
     allAnchorsTags.forEach((item)=>{
         item.addEventListener('mouseover',function(){
-           document.getElementById('customCursor').classList.add('hoveringLink')
+            $cursor.classList.add('hoveringLink')
         });
         item.addEventListener('mouseleave',function(){
-            document.getElementById('customCursor').classList.remove('hoveringLink')
+            $cursor.classList.remove('hoveringLink')
         })
     })
     document.addEventListener('mousemove',function checkHover(event){
-        var posY =  event.clientY;
-        cursor.setAttribute('style','top:'+posY+'px; left:'+event.x+'px;')
+        $cursor.setAttribute('style','top:'+event.y+'px; left:'+event.x+'px;')
     });
 }
+document.addEventListener('mouseleave',function(event){
+    $cursor.classList.add('mouseOut');
+});
+document.addEventListener('mouseover',function(event){
+    if($cursor.classList.contains('mouseOut')){
+        $cursor.classList.remove('mouseOut');
+    }
+});
+*/

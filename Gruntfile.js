@@ -21,7 +21,10 @@ module.exports = function(grunt) {
                 'files': {
                     'assets/css/app.min.css': [
                         "assets/src/sass/index.scss"
-                    ]
+                    ],
+                    'assets/css/tema.min.css': [
+                        "assets/src/sass/tipografia.scss"
+                    ],
                 }
             }           
         },

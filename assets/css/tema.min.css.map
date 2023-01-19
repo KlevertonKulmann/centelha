@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAEQ,oBAAU,CACN,MAAM,CAAC,IAAI,CACX,SAAS,CAAE,MAAM,CAI7B,oCAAmC,CAKf,yBAAE,CACE,SAAS,CAAE,IAAI,CAEnB,yBAAG,CACC,SAAS,CAAE,IAAI,CAInB,4BAAE,CACE,SAAS,CAAE,IAAI,CAEnB,4BAAE,CACE,SAAS,CAAE,IAAI",
+"sources": ["../src/sass/tipografia.scss"],
+"names": [],
+"file": "tema.min.css"
+}
