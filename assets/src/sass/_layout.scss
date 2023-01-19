@@ -91,72 +91,138 @@ body{
     }
   }
 }
-#criacao{
+
+#criacao,
+#especialidades,
+#portifolio,
+#avaliacoes,
+#duvida,
+#contato{
   padding: 180px 0;
   min-height: unset;
+}
+#criacao{
   &.bg-custom{
-   .container{
-    position: relative;
-    &::after,
-    &::before{
-      content: '';
-      top: 50%;
-      width: 300px;
-      overflow: hidden;
-      position: absolute;
-      min-height: 300px;
-      background-size: cover;
-      transform: translateY(-50%);
-      background-image: url("../src/imgs/MARGEM-CRIACAO-SITES.svg");
-    }
-    &::after{
-      right: 0;
-      transform: translateY(-50%)rotateY(180deg);
-    }
-    .content{
+    .container{
       position: relative;
-      z-index: 10;
-      .slider-default{
-        padding: 0 3px;
+      &::after,
+      &::before{
+        content: '';
+        top: 50%;
+        width: 300px;
+        overflow: hidden;
+        position: absolute;
+        min-height: 300px;
+        background-size: cover;
+        transform: translateY(-50%);
+        background-image: url("../src/imgs/MARGEM-CRIACAO-SITES.svg");
+      }
+      &::after{
+        right: 0;
+        transform: translateY(-50%)rotateY(180deg);
+      }
+      .content{
+        position: relative;
+        z-index: 10;
+        .slider-default{
+          padding: 0 3px;
+        }
       }
     }
-   }
   }
 }
-#especialidades{
-  background-image: url('../src/imgs/bg-DARK.png');
+#especialidades,
+#avaliacoes,
+#contato{
   background-position: center center;
   background-size: contain;
   background-repeat: repeat-y;
-  padding: 25px 0;
+  padding: 5px 0;
   position: relative;
   overflow: unset;
+  min-height: unset;
   &::before,
   &::after{
     content: '';
     width: 100%;
-    height: 120px;
     background-size: 100%;
     position: absolute;
     background-repeat: no-repeat;
   }
   &::before{
     background-position: center bottom;
-    background-image: url('../src/imgs/section-border-top.png');
     left: 0;
     top: 0;
-    transform: translateY(-100%);
+    transform: translateY(calc(-100% + 5px));
   }
   &::after{
     background-position: center top;
-    background-image: url('../src/imgs/section-border-bottom.png');
     left: 0;
     bottom: 0;
-    transform: translateY(100%);
+    transform: translateY(calc(100% - 1px));
+  }
+}
+#especialidades{
+  background-image: url('../src/imgs/bg-DARK.png');
+  color:$secondaryContrast;
+  &::before,
+  &::after{
+    height: 120px;
+  }
+  &::before{
+    background-image: url('../src/imgs/section-border-top.png');
+  }
+  &::after{
+    background-image: url('../src/imgs/section-border-bottom.png');
+  }
+  .grid-3{
+    gap: 50px;
+    flex-wrap: wrap;
+    .item {
+      width: calc(33% - 100px);
+      .img-box{
+        height: 141px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items:flex-end;
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
+#avaliacoes{
+  background-image: url('../src/imgs/bg-CINZA.png');
+  &::before,
+  &::after{
+    height: 225px;
+  }
+  &::before{
+    background-image: url('../src/imgs/section-2-border-top.png');
+  }
+  &::after{
+    background-image: url('../src/imgs/section-2-border-bottom.png');
+  }
+}
+#duvida{
+
+}
+#contato{
+  background-image: url('../src/imgs/bg-VERDE.png');
+  color:$secondaryContrast;
+  &::before{
+    height: 175px;
+  }
+  &::before{
+    background-image: url('../src/imgs/section-3-border-top.png');
+  }
+  .titulo{
+    text-align: left;
   }
 }
 section{
   .titulo{
+    text-align: center;
     h2{
       margin-top: 0;
       font-size: 5rem;
@@ -168,6 +234,9 @@ section{
     }
   }
   .content{
+    &.grid-3{
+      text-align: center;
+    }
     h4{
       margin: 1rem 0;
       font-size: 2rem;
@@ -182,9 +251,7 @@ section{
 }
 .box-criacao{
   .titulo{
-    text-align: center;
     margin-bottom: 70px;
-
   }
 }
 @media screen and (max-width:1199px){
@@ -198,6 +265,13 @@ section{
         min-height: 270px;
       }
      }
+    }
+  }
+  #especialidades{
+    .grid-3{
+      .item {
+        width: calc(33% - 60px);
+      }
     }
   }
 }
@@ -256,9 +330,6 @@ section{
       }
     }
   }
-  #especialidades{
-    
-  }
   #criacao{
     &.bg-custom{
      .container{
@@ -270,6 +341,22 @@ section{
         background-image: url("../src/imgs/MARGEM-CRIACAO-SITES-MOB.svg");
       }
      }
+    }
+  }
+  #especialidades{
+    .grid-3{
+      .item {
+        width: calc(50% - 60px);
+      }
+    }
+  }
+}
+@media screen and (max-width:767px){
+  #especialidades{
+    .grid-3{
+      .item {
+        width: 80%;
+      }
     }
   }
 }
