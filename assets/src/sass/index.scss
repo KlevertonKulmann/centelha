@@ -32,8 +32,6 @@ html{
         }
         h2{
           width: 100%;
-          font-size: $principal;
-          font-weight: $grosso;
           margin: 116px 0 0;
           position: relative;
           text-align: center;
@@ -45,8 +43,6 @@ html{
         }
         h1{
           width: 100%;
-          font-size: $principalSubtitulo;
-          font-weight: $extraFino;
           text-align: center;
           span{
             display: block;
@@ -97,12 +93,14 @@ html{
       &#especialidades,
       &#avaliacoes,
       &#contato{
-        background-position: center center;
-        background-size: contain;
-        background-repeat: repeat-y;
-        padding: 5px 0;
         position: relative;
-        overflow: unset;
+        .section-content{
+          background-position: center center;
+          background-size: contain;
+          background-repeat: repeat-y;
+          padding: 5px 0;
+          overflow: unset;  
+        }
         min-height: unset;
         &::before,
         &::after{
@@ -111,26 +109,29 @@ html{
           background-size: 100%;
           position: absolute;
           background-repeat: no-repeat;
+          z-index: -1;
         }
         &::before{
           background-position: center bottom;
           left: 0;
           top: 0;
-          transform: translateY(calc(-100% + 5px));
+          transform: translateY(0);
         }
         &::after{
           background-position: center top;
           left: 0;
           bottom: 0;
-          transform: translateY(calc(100% - 1px));
+          transform: translateY(0);
         }
       }
       &#especialidades{
-        background-image: url('../src/imgs/bg-DARK.png');
+        .section-content{
+          background-image: url('../src/imgs/bg-DARK.png');
+        }
         color:$secondaryContrast;
         &::before,
         &::after{
-          height: 120px;
+          height: 180px;
         }
         &::before{
           background-image: url('../src/imgs/section-border-top.png');
@@ -162,7 +163,7 @@ html{
       }
       &#portifolio{
         padding: 0;
-        margin: 180px 0;
+        margin: 10rem 0;
         position: relative;
         z-index: 2;
         &::after{
@@ -240,10 +241,13 @@ html{
         }
       }
       &#avaliacoes{
-        background-image: url('../src/imgs/bg-CINZA.png');
+        padding: 26rem 0;
+        .section-content{
+          background-image: url('../src/imgs/bg-CINZA.png');
+        }
         &::before,
         &::after{
-          height: 225px;
+          height: 33rem;
         }
         &::before{
           background-image: url('../src/imgs/section-2-border-top.png');
@@ -253,13 +257,16 @@ html{
         }
       }
       &#duvida{
-
+        padding: 0;
       }
       &#contato{
-        background-image: url('../src/imgs/bg-VERDE.png');
+        .section-content{
+          background-image: url('../src/imgs/bg-VERDE.png');
+        }
         color:$secondaryContrast;
+        padding: 22rem 0 0;
         &::before{
-          height: 175px;
+          height: 22rem;
         }
         &::before{
           background-image: url('../src/imgs/section-3-border-top.png');
@@ -272,11 +279,40 @@ html{
   }
 }
 
+@media screen and (max-width:1199px){
+  html{
+    body{
+      section{
+        .container{
+          width: 95%;
+        }
+        &#portifolio{
+          margin: 0;
+        }
+        &#avaliacoes,
+        &#contato{
+          padding: 12rem 0;
+          &::after,
+          &::before{
+            height: 15rem;
+          }
+        }
+        &#contato{
+          padding: 11.5rem 0 0;
+          &::before{
+            height: 12rem;
+          }
+        }
+      }
+    }
+  }
+}
 @media screen and (max-width:1024px) {
   html{
     body{
       section{
         &#criacao{
+          padding: 7rem 0 0;
           &.bg-custom{
            .container{
             width: 90%;
@@ -290,6 +326,11 @@ html{
           }
         }
         &#especialidades{
+          &::after,
+          &::before{
+            height: 7rem;
+          }
+          padding: 7rem 0;
           .grid-3{
             .item {
               width: calc(50% - 60px);
@@ -297,9 +338,17 @@ html{
           }
         }
         &#portifolio{
+          margin: 0;
           &::after{
             right: 0;
           }
+        }
+        &#avaliacoes{
+          &::after,
+          &::before{
+            height: 12rem;
+          }
+          padding: 12rem 0;
         }
       } 
     } 
@@ -312,6 +361,15 @@ html{
         &#topo{
           margin-top: 0;
         }
+        &#especialidades,
+        &#avaliacoes,
+        &#contato{
+          padding: 8rem 0;
+          &::before,
+          &::after{
+            height: 8rem;
+          }
+        }
         &#especialidades{
           .grid-3{
             .item {
@@ -323,6 +381,9 @@ html{
           &::after{
             transform: translate(0, 100%);
           }
+        }
+        &#contato{
+          padding: 8rem 0 0;
         }
       }
     }

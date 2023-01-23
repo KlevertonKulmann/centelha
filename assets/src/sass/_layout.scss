@@ -261,7 +261,7 @@ section{
 
 @media screen and (max-width:1199px){
   #criacao{
-    padding: 120px 0;
+    padding: 12rem 0;
     &.bg-custom{
      .container{
       &::after,
@@ -417,17 +417,17 @@ section{
 @keyframes fadeIn-slideDown{
   0%{
     opacity: 0;
-    top:75%;
+    top:70%;
     transform: translate(-50%, 0)scale(1.2);
   }
   30%{
     opacity: 1;
-    top:75%;
+    top:70%;
   }
   35%{
     opacity: 1;
     transform: translate(-50%, 0)scale(.5);
-    top:75%;
+    top:70%;
   }
   90%{
     opacity: 1;
@@ -443,14 +443,14 @@ section{
 @keyframes slideDown{
   0%{
     opacity: 0;
-    top:75%;
+    top:70%;
   }
   30%{
     opacity: 1;
   }
   35%{
     opacity: 1;
-    top:75%;
+    top:70%;
   }
   90%{
     opacity: 1;
