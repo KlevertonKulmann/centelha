@@ -78,6 +78,7 @@ function mobSlider(){
       dots:$dots,
       autoplay:$autoPlay,
       autoplaySpeed:7000,
+      adaptiveHeight:true,
       responsive: [
         {
           breakpoint: 1024,
@@ -119,6 +120,10 @@ function loadScreen(){
             loadScreen.remove();
         },300)
     },3400)
+}
+function faq(item){
+    $('.faq .item').removeClass('aberto');
+    item.classList.add('aberto');
 }
 /*
 function cursor(event) {

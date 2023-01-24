@@ -23,9 +23,11 @@ html{
             &#topo {
                 h1{
                     font-size: $principalSubtitulo;
+                    font-weight: $extraFino;
                 }
                 h2 {
                     font-size: $principal;
+                    font-weight: $grosso;
                 }
             }
             .titulo{
@@ -38,6 +40,7 @@ html{
                 h3{
                     font-size: $subtitulo;
                     margin-bottom: 0;
+                    font-weight: $medio;
                 }
             }
             h4{
@@ -74,6 +77,11 @@ html{
                     transform: translateX(0);
                 }
             }
+            section{
+                .container{
+                  width: 95%;
+                }
+            }
         }
     }
 }
@@ -85,11 +93,9 @@ html{
                 &#topo {
                     h1{
                         font-size: 4rem;
-                        font-weight: $extraFino;
                     }
                     h2 {
                         font-size: 5rem;
-                        font-weight: $grosso;
                     }
                 }
                 .titulo{

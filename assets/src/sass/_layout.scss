@@ -3,6 +3,9 @@
 html{
   font-size:$aspect;
 }
+::selection{
+  background-color: $primary;
+}
 body{
   /*Estilos da barra de rolagem*/
   &::-webkit-scrollbar {
@@ -258,7 +261,91 @@ section{
     }
   }
 }
-
+#avaliacoes{
+  .slide-content{
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4rem;
+    &-data{
+      text-align: left;
+      padding-bottom: 3rem;
+      .nome{
+        margin-top: 0;
+      }
+      .primeiro-nome{
+        font-size: $opcaoMenu;
+        font-weight: $fino;
+      }
+      .testimonial{
+        max-width: 50rem;
+        padding: 0 9rem;
+        position: relative;
+        &::before,
+        &::after{
+          content: '';
+          width: 80px;
+          height:51px;
+          background-image: url('../src/imgs/ASPAS.svg');
+          background-position: center;
+          background-size: contain;
+          background-repeat: no-repeat;
+          position: absolute;
+        }
+        &::before{
+          transform: translate(calc(-100% - 2rem), -50%);
+        }
+        &::after{
+          right: 0;
+          transform: translate(10%, 0) rotateY(180deg)rotateX(180deg);
+        }
+      }
+    }
+  }
+}
+#duvida{
+  .faq{
+    max-width: 105rem;
+    margin: auto;
+    .item{
+      overflow: hidden;
+      background-color: $secondaryContrast;
+      border-left: 1rem solid $primary;
+      padding:2rem;
+      &:not(:last-child){
+        margin-bottom: 2rem;
+      }
+      cursor: pointer;
+      .pergunta{
+        h3{
+          margin: 0;
+          font-size: $subtitulo;
+          font-weight: $fino;
+        }
+      }
+      .resposta{
+        transition: max-height .5s;
+        max-height: 0;
+        overflow: hidden;
+        p{
+          margin-bottom: 0;
+        }
+        p,
+        ul li,
+        span{
+          font-size: $tituloItem;
+          font-weight: $fino;
+        }
+      }
+      &.aberto{
+        cursor: default;
+        .resposta{
+          max-height: 60rem;
+        }
+      }
+    }
+  }
+}
 @media screen and (max-width:1199px){
   #criacao{
     padding: 12rem 0;

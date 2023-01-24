@@ -21,6 +21,7 @@ function mobSlider(){
       dots:$dots,
       autoplay:$autoPlay,
       autoplaySpeed:7000,
+      adaptiveHeight:true,
       responsive: [
         {
           breakpoint: 1024,

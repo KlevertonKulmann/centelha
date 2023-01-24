@@ -19,6 +19,10 @@ function loadScreen(){
         },300)
     },3400)
 }
+function faq(item){
+    $('.faq .item').removeClass('aberto');
+    item.classList.add('aberto');
+}
 /*
 function cursor(event) {
     $cursor = document.getElementById('customCursor');
