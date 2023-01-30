@@ -39,13 +39,10 @@ function mobileMenuToggle(){
     menuBtn.classList.toggle('mob-menu-aberto')
 }
 function init(){
-    //toggleTema();
     loadScreen();
     backToTop();
     anchor();
-    //cursor(event);
     mobSlider();
-
 }
 document.addEventListener( 'DOMContentLoaded', function(){
     init();

@@ -1,0 +1,35 @@
+{
+    "especialidades":
+    [
+        {
+            "img":"assets/src/imgs/BOAS-PRATICAS.svg",
+            "titulo":"BOAS PRÁTICAS",
+            "texto":"NOSSOS DESENVOLVEDORES UTILIZAM CÓDIGOS LIMPOS E CLAROS PARA FACILITAR POSSÍVEIS MANUTENÇÕES"
+        },
+        {
+            "img":"assets/src/imgs/PAGINAS-PROMO.svg",
+            "titulo":"PÁGINAS PROMOCIONAIS",
+            "texto":"CRIAÇÃO DE PÁGINAS QUE IMPULSIONAM SEU NEGÓCIO EM DATAS PROGRAMADAS COMO BLACKFRIDAY, NATAL E MAIS"
+        },
+        {
+            "img":"assets/src/imgs/TECNOLOGIA-PONTA.svg",
+            "titulo":"TECNOLOGIA DE PONTA",
+            "texto":"UTILIZAMOS ALGUMAS DAS MELHORES TECNOLOGIAS PARA DESENVOLVIMENTO WEB QUE EXISTEM NO MERCADO"
+        },
+        {
+            "img":"assets/src/imgs/SUPORTE.svg",
+            "titulo":"PÁGINAS PROMOCIONAIS",
+            "texto":"NOSSA EQUIPE ESTÁ PREPARADA PARA MANTER O SUPORTE DO SEU SITE E ESCLARECIMENTO DE DÚVIDAS 24/7"
+        },
+        {
+            "img":"assets/src/imgs/SITE-AGIL.svg",
+            "titulo":"SUPORTE CONTÍNUO",
+            "texto":"DESENVOLVIMENTO DE ALTA QUALIDADE QUE PERMITE NOTAS ALTAS EM FERRAMENTAS DE DESEMPENHO DE SITES"
+        },
+        {
+            "img":"assets/src/imgs/LAYOUT-MOBILE.svg",
+            "titulo":"LAYOUT RESPONSIVO",
+            "texto":"SEUS CLIENTES USAM MUITO O CELULAR? SEM PROBLEMAS, SEU SITE VAI CONTINUAR LINDO EM DISPOSITIVOS MÓVEIS"
+        }
+    ]
+}

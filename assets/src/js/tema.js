@@ -21,30 +21,7 @@ function loadScreen(){
 }
 function faq(item){
     $('.faq .item').removeClass('aberto');
-    item.classList.add('aberto');
+    setTimeout(function(){
+        item.classList.add('aberto');
+    },250);
 }
-/*
-function cursor(event) {
-    $cursor = document.getElementById('customCursor');
-    const allAnchorsTags = document.querySelectorAll('a');
-    allAnchorsTags.forEach((item)=>{
-        item.addEventListener('mouseover',function(){
-            $cursor.classList.add('hoveringLink')
-        });
-        item.addEventListener('mouseleave',function(){
-            $cursor.classList.remove('hoveringLink')
-        })
-    })
-    document.addEventListener('mousemove',function checkHover(event){
-        $cursor.setAttribute('style','top:'+event.y+'px; left:'+event.x+'px;')
-    });
-}
-document.addEventListener('mouseleave',function(event){
-    $cursor.classList.add('mouseOut');
-});
-document.addEventListener('mouseover',function(event){
-    if($cursor.classList.contains('mouseOut')){
-        $cursor.classList.remove('mouseOut');
-    }
-});
-*/
