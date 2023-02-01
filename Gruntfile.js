@@ -2,12 +2,23 @@ module.exports = function(grunt) {
 
     // Project configuration.
     grunt.initConfig({
+        
         concat: {
             'basic_and_extras': {
                 'files': {
                     'assets/js/app.js': [
-                        "assets/src/js/*.js",
+                        "assets/src/js/index.js",
+                        "assets/src/js/parallax.js",
+                        "assets/src/js/slider.js",
+                        "assets/src/js/tema.js",
+                        "assets/src/js/fix.js",
                     ],
+                    'assets/js/dadosHome.js': [
+                        "assets/src/js/homeData.js"
+                    ],
+                    'assets/js/slider.js': [
+                        "assets/src/js/slider.js"
+                    ]
                 }
             }
         },
@@ -21,7 +32,10 @@ module.exports = function(grunt) {
                 'files': {
                     'assets/css/app.min.css': [
                         "assets/src/sass/index.scss"
-                    ]
+                    ],
+                    'assets/css/tema.min.css': [
+                        "assets/src/sass/tipografia.scss"
+                    ],
                 }
             }           
         },
@@ -45,7 +59,9 @@ module.exports = function(grunt) {
             },
             "my_target":{
                 "files":{
-                    'assets/js/app.min.js': ['assets/js/app.js']
+                    'assets/js/app.min.js': ['assets/js/app.js'],
+                    'assets/js/dadosHome.min.js': ['assets/js/dadosHome.js'],
+                    'assets/js/slider.min.js': ['assets/js/slider.js']
                 } 
             }
         }

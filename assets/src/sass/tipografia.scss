@@ -1,0 +1,132 @@
+@import "themeDefault";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;600&display=swap');
+$texto:1.7rem;
+$titulo:5.5rem;
+$principal:7rem;
+$subtitulo:3rem;
+$tituloItem:2rem;
+$opcaoMenu:2.4rem;
+$principalSubtitulo:5rem;
+
+$fonte : 'Inter', sans-serif;
+
+$fino:300;
+$medio:400;
+$grosso:600;
+$extraFino:200;
+
+$aspect:62.5%;
+html{
+    body{
+        *{
+            font-family: $fonte;
+        }
+        .container{
+            margin:auto;
+            max-width: 1200px;
+        }
+        section{
+            &#topo {
+                h1{
+                    font-weight: $extraFino;
+                    font-size: $principalSubtitulo;
+                }
+                h2 {
+                    font-weight: $grosso;
+                    font-size: $principal;
+                }
+            }
+            .titulo{
+                text-align: center;
+                h2{
+                    margin-top: 0;
+                    font-size: $titulo;
+                    font-weight: $grosso;
+                }
+                h3{
+                    margin-bottom: 0;
+                    font-weight: $medio;
+                    font-size: $subtitulo;
+                }
+            }
+            h4{
+                margin: 1rem 0;
+                font-weight: $grosso;
+                font-size: $tituloItem;
+            }
+            p{
+                margin: 1rem 0;
+                font-size: $texto;
+                font-weight: $extraFino;
+            }
+            .nome{
+                font-size: $subtitulo;
+            }
+            .descricao,
+            .detalhes{
+                margin: 0;
+                font-weight: $fino;
+                font-size: $opcaoMenu;
+            }
+            
+        }
+    }
+}
+@media screen and (max-width:1200px) {
+    html{
+        body{
+            header{
+                a{
+                    font-size: 2rem;
+                }
+                .d-flex{
+                    transform: translateX(0);
+                }
+            }
+            section{
+                .container{
+                  width: 95%;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:767px){
+    html{
+        body{
+            section{
+                &#topo {
+                    h1{
+                        font-size: 4rem;
+                    }
+                    h2 {
+                        font-size: 5rem;
+                    }
+                }
+                .titulo{
+                    text-align: center;
+                    h2{
+                        margin-top: 0;
+                        font-size: 3rem;
+                        font-weight: $grosso;
+                    }
+                    h3{
+                        font-size: 2rem;
+                        margin-bottom: 0;
+                    }
+                }
+                h4{
+                    margin: 1rem 0;
+                    font-weight: $grosso;
+                    font-size: $tituloItem;
+                }
+                p{
+                    margin: 1rem 0;
+                    font-size: $texto;
+                    font-weight: $extraFino;
+                }
+            }
+        }
+    }
+}

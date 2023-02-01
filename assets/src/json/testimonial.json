@@ -1,0 +1,35 @@
+{
+    "testimonial":
+    [
+        {
+            "avatar":"assets/src/imgs/avatar-1.png",
+            "nome":"MARIA",
+            "sobrenome":"EDUARDA",
+            "mensagem":"A Centelha foi incrível ao entender as minhas necessidades e transformar o meu site dos sonhos em realidade. O que mais me impressionou foi o nível de detalhamento e precisão da equipe, se provaram ser um excelente investimento para o meu negócio."
+        },
+        {
+            "avatar":"assets/src/imgs/avatar-2.png",
+            "nome":"RICARDO",
+            "sobrenome":"PANTOLFI",
+            "mensagem":"Após dois meses de reuniões, a gente conseguiu ver o nosso site tomando vida com todas as informações que tínhamos pedido exatamente do jeito que pedimos e foi incrível ver que o tempo que no começo  parecia ser demorado, mas no fim, vendo o site no ar posso dizer que valeu a pena."
+        },
+        {
+            "avatar":"assets/src/imgs/avatar-3.png",
+            "nome":"MATHEUS",
+            "sobrenome":"SANTOS",
+            "mensagem":"Essa equipe é completamente incrível, sugestões de melhorias para meu site, entraram em contato comigo e ofereceram o serviço para melhorar a velocidade e modernizar meu site e digo com toda certeza, que trabalho incrível "
+        },
+        {
+            "avatar":"assets/src/imgs/avatar-4.png",
+            "nome":"TIAGO",
+            "sobrenome":"ASSIS",
+            "mensagem":"A eficiência e produtividade da Centelha me deixou impressionada, desde as reuniões até a parte do desenvolvimento com as previas que a gente foi capaz de fazer melhorias e ajeitar alguns pontos chaves no layout, sem palavras."
+        },
+        {
+            "avatar":"assets/src/imgs/avatar-5.png",
+            "nome":"JULIANA",
+            "sobrenome":"GARCIA",
+            "mensagem":"A Centelha foi a virada de chave na minha barbearia, antes eu achava que um site não poderia me ajudar muito, mas quando vi os clientes chegando através do site, notei que não basta ter uma empresa física, tem que se colocar on-line também, isso faz toda a diferença."
+        }
+    ]
+}

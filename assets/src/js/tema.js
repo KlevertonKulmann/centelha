@@ -1,3 +1,4 @@
+var $cursor ;
 function toggleTema(){
     var tema = document.querySelector('body');
     var elementExists = document.getElementById("trocaTema")
@@ -17,4 +18,10 @@ function loadScreen(){
             loadScreen.remove();
         },300)
     },3400)
+}
+function faq(item){
+    $('.faq .item').removeClass('aberto');
+    setTimeout(function(){
+        item.classList.add('aberto');
+    },250);
 }

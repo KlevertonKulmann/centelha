@@ -2,7 +2,10 @@
 <html lang="pt-BR">
     <head>
         <meta charset="UTF-8">
-        <title>Título</title>
+        <title>Centelha Digital - Criação de sites profissionais</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="assets/src/imgs/LOGO.svg" type="image/x-icon">
+        <link rel="stylesheet" type="text/css" href="assets/src/libs/slick/slick.css"/>
         <link rel="stylesheet" href="assets/css/app.min.css">
     </head>
     <body>
@@ -15,18 +18,24 @@
         <a class="flutuante-bl flutuante flutuante-bg1 hide anchor" href="#topo" id="btt">
             <img src="assets/src/imgs/ARROW-UP.svg" alt="Arrow-Up">
         </a>
-        <header>
+        <div onclick="mobileMenuToggle()" class="mob-show toggle-button flutuante flutuante-tr flutuante-bg1" id="menuBtn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <header id="menu-box">
             <div class="container">
-                <div class="d-flex">
-                    <a class="anchor" href="#criacao">CRIAÇÃO</a>
-                    <a class="anchor" href="#especialidades">ESPECIALIDADES</a>
-                    <a class="anchor" href="#portifolio">PORTIFÓLIO</a>
-                    <a class="anchor" href="#topo">
-                        <img src="assets/src/imgs/LOGO.svg" alt="Logo Centelha">
+                <div class="d-flex mob-menu">
+                    <a class="anchor mob-order-2" href="#criacao">CRIAÇÃO</a>
+                    <a class="anchor mob-order-3" href="#especialidades">ESPECIALIDADES</a>
+                    <a class="anchor mob-order-4" href="#portifolio">PORTIFÓLIO</a>
+                    <a class="anchor mob-order-1" href="#topo">
+                        <img class="mob-hide" src="assets/src/imgs/LOGO.svg" alt="Logo Centelha">
+                        <span class="mob-show">TOPO</span>
                     </a>
-                    <a class="anchor" href="#avaliacoes">AVALIAÇÕES</a>
-                    <a class="anchor" href="#duvida">DÚVIDAS</a>
-                    <a class="anchor" href="#contato">CONTATO</a>
+                    <a class="anchor mob-order-5" href="#avaliacoes">AVALIAÇÕES</a>
+                    <a class="anchor mob-order-6" href="#duvida">DÚVIDAS</a>
+                    <a class="anchor mob-order-7" href="#contato">CONTATO</a>
                 </div>
             </div>
         </header>
@@ -51,14 +60,14 @@
                 </div>
             </div>
         </section>
-        <section id="criacao">
+        <section id="criacao" class="bg-custom">
             <div class="container">
                 <div class="content box-criacao">
                     <div class="titulo">
                         <h3>CRIAÇÃO DE SITES</h3>
                         <h2>COMO FUNCIONA?</h2>
                     </div>
-                    <div class="grid-4">
+                    <div class="slider-default slider-centelha slider-grid-four" data-slides="4">
                         <div>
                             <img src="assets/src/imgs/CONTATO.svg" alt="">
                             <h4>CONTATO</h4>
@@ -84,23 +93,189 @@
             </div>
         </section>
         <section id="especialidades">
-            <div class="container"></div>
+            <div class="section-content">
+                <div class="container">
+                    <div class="titulo">
+                        <h3>NOSSAS</h3>
+                        <h2>ESPECIALIDADES</h2>
+                    </div>
+                    <div class="d-flex grid-3 content" id="especialidades-box">
+                        <!-- especialidades montado via json -->                        
+                    </div>
+                </div>
+            </div>
         </section>
         <section id="portifolio">
-            <div class="container"></div>
+            <div class="container">
+                <div class="titulo">
+                    <h2>PORTFÓLIO</h2>
+                </div>
+                <div class="content">
+                    <div class="slider-default slider-centelha slider-grid-three" data-slides="3">
+                        <div>
+                            <div class="hoverMarcas d-flex">
+                                <img src="assets/src/imgs/RPC-LOGO.svg" alt="">
+                                <div class="showOnHover d-flex">
+                                    <div>
+                                        <h4 class="nome">RPC</h4>
+                                        <p class="ano">2022</p>
+                                    </div>
+                                    <h4 class="descricao">e-commerce especializada em roupas e acessórios para ciclistas</h4>
+                                    <div>
+                                        <h4 class="detalhes">Serviço prestado:</h4>
+                                        <p>Sites Promocionais<br>(Black Friday e Natal)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="hoverMarcas d-flex">
+                                <img src="assets/src/imgs/MAXPLURAL-LOGO.svg" alt="">
+                                <div class="showOnHover d-flex">
+                                    <div>
+                                        <h4 class="nome">MAX PLURAL</h4>
+                                        <p class="ano">2021</p>
+                                    </div>
+                                    <h4 class="descricao">Focada no ramo imobiliário de alto padrão em Pernambuco</h4>
+                                    <div>
+                                        <h4 class="detalhes">Serviço prestado:</h4>
+                                        <p>Site Multipage | Institucional</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="hoverMarcas">
+                                <div class="hoverMarcas d-flex">
+                                    <img src="assets/src/imgs/FLORIPA-LOGO.svg" alt="">
+                                    <div class="showOnHover d-flex">
+                                        <div>
+                                            <h4 class="nome">Floripa Drive Tour</h4>
+                                            <p class="ano">2017</p>
+                                        </div>
+                                        <h4 class="descricao">Turismo e aluguel de vans na Capital de Santa Catarina</h4>
+                                        <div>
+                                            <h4 class="detalhes">Serviço prestado:</h4>
+                                            <p>Site Multipage | Institucional<br>Integração Instagram</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="hoverMarcas">
+                                <div class="hoverMarcas">
+                                    <div class="hoverMarcas d-flex">
+                                        <img src="assets/src/imgs/RR-LOGO.svg" alt="">
+                                        <div class="showOnHover d-flex">
+                                            <div>
+                                                <h4 class="nome">RR Carros Antigos</h4>
+                                                <p class="ano">2016</p>
+                                            </div>
+                                            <h4 class="descricao">Aluguel e exposição de carros vintage para eventos em Florianópolis</h4>
+                                            <div>
+                                                <h4 class="detalhes">Serviço prestado:</h4>
+                                                <p>Site Multipage | Institucional<br>Integração Instagram</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="hoverMarcas">
+                                <div class="hoverMarcas">
+                                    <div class="hoverMarcas">
+                                        <div class="hoverMarcas d-flex">
+                                            <img src="assets/src/imgs/RK-LOGO.svg" alt="">
+                                            <div class="showOnHover d-flex">
+                                                <div>
+                                                    <h4 class="nome">RK Papel de Parede</h4>
+                                                    <p class="ano">2016</p>
+                                                </div>
+                                                <h4 class="descricao">Empresa pioneira em revenda e aplicação de papel de parede líquido em Florianópolis e região</h4>
+                                                <div>
+                                                    <h4 class="detalhes">Serviço prestado:</h4>
+                                                    <p>Site Multipage | Institucional</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
         <section id="avaliacoes">
-            <div class="container"></div>
+            <div class="section-content">
+                <div class="container">
+                    <div class="titulo">
+                        <h3>AVALIAÇÕES DE</h3>
+                        <h2>CLIENTES</h2>
+                    </div>
+                    <div class="content">
+                        <div class="slider-default slider-testimonial">
+                             <!-- testimonial montado via json -->
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
         <section id="duvida">
-            <div class="container"></div>
+            <div class="container">
+                <div class="titulo">
+                    <h3>DÚVIDAS</h3>
+                    <h2>FREQUENTES</h2>
+                </div>
+                <div class="content">
+                    <div class="faq">
+                        <!-- faq montado via json -->
+                    </div>
+                </div>
+            </div>
         </section>
         <section id="contato">
-            <div class="container"></div>
+            <div class="section-content">
+                <div class="container">
+                    <div class="titulo">
+                        <h3>ENTRE EM</h3>
+                        <h2>CONTATO</h2>
+                    </div>
+                    <div id="contact-form">
+                        <form id="enviaMensagem" action="">
+                            <div class="row">
+                                <div class="input-group d-flex">
+                                    <input type="text" name="nome" id="nome" placeholder="Nome *" required>
+                                    <input type="email" name="email" id="email" placeholder="e-Mail *" required>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <textarea name="mensagem" id="mensagem" rows="5" placeholder="Mensagem" ></textarea>
+                            </div>
+                            <div class="row">
+                                <button id="botaoEnvia" onclick="enviaMensagem(event)" class="disabled" type="submit" disabled>ENVIAR <i></i></button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </section>
-       
-        <footer></footer>
-        
-        <script src="assets/js/app.min.js"></script>
+
+        <footer>
+            <div class="container">
+                <h3>Desenvolvido por <strong>CENTELHA DIGITAL</strong></h3>
+                <img src="assets/src/imgs/mascaraCentelha.svg" alt="">
+            </div>
+            
+        </footer>
+        <span id="customCursor"></span>
+        <script type="text/javascript" src="assets/js/jquery-3.6.3.min.js"></script>
+        <script type="text/javascript" src="assets/src/libs/jquery/jquery-migrate.min.js"></script>
+        <script type="text/javascript" src="assets/src/libs/slick/slick.min.js"></script>
+        <script type="text/javascript" src="assets/js/slider.min.js"></script>
+        <script type="text/javascript" src="assets/js/dadosHome.min.js"></script>
+        <script type="text/javascript" src="assets/js/app.min.js"></script>
     </body>
 </html>
