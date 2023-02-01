@@ -243,13 +243,34 @@
                         <h3>ENTRE EM</h3>
                         <h2>CONTATO</h2>
                     </div>
-                    
+                    <div id="contact-form">
+                        <form id="enviaMensagem" action="">
+                            <div class="row">
+                                <div class="input-group d-flex">
+                                    <input type="text" name="nome" id="nome" placeholder="Nome *" required>
+                                    <input type="email" name="email" id="email" placeholder="e-Mail *" required>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <textarea name="mensagem" id="mensagem" rows="5" placeholder="Mensagem" ></textarea>
+                            </div>
+                            <div class="row">
+                                <button id="botaoEnvia" onclick="enviaMensagem(event)" class="disabled" type="submit" disabled>ENVIAR <i></i></button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </section>
 
+        <footer>
+            <div class="container">
+                <h3>Desenvolvido por <strong>CENTELHA DIGITAL</strong></h3>
+                <img src="assets/src/imgs/mascaraCentelha.svg" alt="">
+            </div>
+            
+        </footer>
         <span id="customCursor"></span>
-        <footer></footer>
         <script type="text/javascript" src="assets/js/jquery-3.6.3.min.js"></script>
         <script type="text/javascript" src="assets/src/libs/jquery/jquery-migrate.min.js"></script>
         <script type="text/javascript" src="assets/src/libs/slick/slick.min.js"></script>

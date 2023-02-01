@@ -1,20 +1,26 @@
 @import "themeDefault";
-$principal:7rem;
-$principalSubtitulo:5rem;
-$titulo:5.5rem;
-$subtitulo:3rem;
-$opcaoMenu:2.4rem;
-$tituloItem:2rem;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;600&display=swap');
 $texto:1.7rem;
+$titulo:5.5rem;
+$principal:7rem;
+$subtitulo:3rem;
+$tituloItem:2rem;
+$opcaoMenu:2.4rem;
+$principalSubtitulo:5rem;
 
-$grosso:600;
-$medio:400;
+$fonte : 'Inter', sans-serif;
+
 $fino:300;
+$medio:400;
+$grosso:600;
 $extraFino:200;
 
 $aspect:62.5%;
 html{
     body{
+        *{
+            font-family: $fonte;
+        }
         .container{
             margin:auto;
             max-width: 1200px;
@@ -22,12 +28,12 @@ html{
         section{
             &#topo {
                 h1{
-                    font-size: $principalSubtitulo;
                     font-weight: $extraFino;
+                    font-size: $principalSubtitulo;
                 }
                 h2 {
-                    font-size: $principal;
                     font-weight: $grosso;
+                    font-size: $principal;
                 }
             }
             .titulo{
@@ -38,20 +44,20 @@ html{
                     font-weight: $grosso;
                 }
                 h3{
-                    font-size: $subtitulo;
                     margin-bottom: 0;
                     font-weight: $medio;
+                    font-size: $subtitulo;
                 }
             }
             h4{
                 margin: 1rem 0;
-                font-size: $tituloItem;
                 font-weight: $grosso;
+                font-size: $tituloItem;
             }
             p{
                 margin: 1rem 0;
-                font-weight: $extraFino;
                 font-size: $texto;
+                font-weight: $extraFino;
             }
             .nome{
                 font-size: $subtitulo;
@@ -59,8 +65,8 @@ html{
             .descricao,
             .detalhes{
                 margin: 0;
-                font-size: $opcaoMenu;
                 font-weight: $fino;
+                font-size: $opcaoMenu;
             }
             
         }
@@ -112,13 +118,13 @@ html{
                 }
                 h4{
                     margin: 1rem 0;
-                    font-size: $tituloItem;
                     font-weight: $grosso;
+                    font-size: $tituloItem;
                 }
                 p{
                     margin: 1rem 0;
-                    font-weight: $extraFino;
                     font-size: $texto;
+                    font-weight: $extraFino;
                 }
             }
         }
