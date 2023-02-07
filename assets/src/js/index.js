@@ -68,6 +68,7 @@ function init(){
     anchor();
     mobSlider();
     validaForm();
+    testimonialSlider();
 }
 document.addEventListener( 'DOMContentLoaded', function(){
     init();
