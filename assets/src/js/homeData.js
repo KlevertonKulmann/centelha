@@ -1,4 +1,4 @@
-(function faq(){
+/*(function faq(){
     let faqBox = document.querySelector('#duvida .faq');
     fetch("../assets/src/json/faq.json")
   .then(response => response.json())
@@ -75,4 +75,4 @@
         });
 
     });
-})();
+})();*/
